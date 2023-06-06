@@ -19,14 +19,20 @@ const buildUsers = async () => {
                     paragraph.innerText = `${user.id}) ${user.name}`;
 
                     const infoButton = document.createElement('button');
+                    infoButton.classList.add('infoButton');
                     infoButton.innerText = 'Details';
 
                     infoButton.addEventListener('click', () => {
+                        location.href = '../post_details/post-details.html';
                     })
+                    const decorationalDiv = document.createElement('div');
+                    decorationalDiv.classList.add('decorationInfo');
 
-                    infoBlock.append(paragraph, infoButton);
+                    infoBlock.append(paragraph, infoButton, decorationalDiv);
 
-                    document.body.appendChild(infoBlock);
+                    wrapper.appendChild(infoBlock)
+
+                    document.body.appendChild(wrapper);
                 })
             });
     }catch (e) {
@@ -34,3 +40,5 @@ const buildUsers = async () => {
     }
 }
 buildUsers();
+
+
