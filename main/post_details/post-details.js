@@ -14,13 +14,13 @@ const userExlorer = (user) => {
 
     for (let field in user) {
         const p = document.createElement('p');
-        p.innerText = `${field} - ${user[field]}`;
+        p.innerText = `${field.slice(0,1).toUpperCase() + field.slice(1)}  :  ${user[field]}`;
         listData.appendChild(p);
 
         if (typeof user[field] === 'object') {
             const div = document.createElement('div');
             div.classList.add('decorationalDiv');
-            p.innerText = `${field}: ⤵`;
+            p.innerText = `${field.slice(0,1).toUpperCase() + field.slice(1)}: ⤵`;
             p.style.marginTop = '5px';
             div.appendChild(p);
             listData.appendChild(div);
@@ -31,7 +31,7 @@ const userExlorer = (user) => {
 }
 userExlorer(userData);
 
-//Кнопка повернення на минилу сторінку
+//Кнопка повернення на минилу сторінку.
 
 const buttonInfo = document.querySelector('.navInfo button');
 buttonInfo.onclick = () => {
@@ -40,3 +40,4 @@ buttonInfo.onclick = () => {
 
 const hrLine = document.createElement('hr');
 document.body.appendChild(hrLine);
+
