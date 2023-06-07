@@ -4,3 +4,15 @@ body {
     color: white;
     font-size: 20px;
 }
+h2 {
+    margin-left: 70px;
+}
+.decorationalDiv{
+    padding-top: 0;
+    width: 150px;
+    border-radius: 2px;
+    margin-left: 10px;
+}
+.decorationalDiv:hover {
+    color: gray;
+}
