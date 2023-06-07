@@ -1,12 +1,22 @@
+hr {
+    margin: 0;
+}
+.listData {
+    margin: 0;
+}
+.userInfo p:first-child{
+    margin-top: 0;
+}
+.userInfo p:last-child{
+    margin-bottom: 0;
+}
 body {
     margin: 0;
     background-color: #0f1221;
     color: white;
     font-size: 20px;
 }
-h2 {
-    margin-left: 70px;
-}
+
 .decorationalDiv{
     padding-top: 0;
     width: 150px;
@@ -15,4 +25,31 @@ h2 {
 }
 .decorationalDiv:hover {
     color: gray;
+}
+.userInfo {
+    padding: 30px 30px 30px 0;
+    box-sizing: border-box;
+    width: 30%;
+    border-right: 2px solid white;
+}
+.navInfo {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px 0 70px;
+    align-items: center;
+}
+.navInfo button {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 150px;
+
+    transition: 0.3s;
+}
+.navInfo button:hover {
+    transition: 0.3s;
+    background-color: #c7c7c7;
+    border-radius: 12px;
+    color: white;
 }

@@ -30,3 +30,13 @@ const userExlorer = (user) => {
     }
 }
 userExlorer(userData);
+
+//Кнопка повернення на минилу сторінку
+
+const buttonInfo = document.querySelector('.navInfo button');
+buttonInfo.onclick = () => {
+    location.href = '../index/index.html';
+}
+
+const hrLine = document.createElement('hr');
+document.body.appendChild(hrLine);
