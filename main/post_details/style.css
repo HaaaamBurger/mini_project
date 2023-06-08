@@ -19,6 +19,7 @@ body {
     color: white;
     font-size: 20px;
     text-align: center;
+    min-width: 800px;
 }
 
 .decorationalDiv{
@@ -72,9 +73,9 @@ body {
     transition: 0.3s;
 }
 .postWrapper {
-    align-items: center;
 
-    height: 300px;
+    margin-top: 50px;
+    height: 200px;
     column-count: 5;
 }
 .postButtonInfo {

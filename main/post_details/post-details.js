@@ -29,6 +29,7 @@ const userExlorer = (user) => {
         }
     }
 }
+
 userExlorer(userData);
 
 //Кнопка повернення на минилу сторінку.
@@ -45,8 +46,9 @@ document.body.appendChild(hrLine);
 const postButton = document.createElement('button');
 postButton.innerText = "Get user's Posts";
 postButton.classList.add('postButton');
+const hrLine_2 = document.createElement('hr');
 
-document.body.appendChild(postButton);
+document.body.append(postButton, hrLine_2);
 
 //При кліку отримуємо данні з ендпоінту і відмальовуєм.
 
@@ -64,10 +66,17 @@ const getPosts = async() => {
 
                   const postButtonInfo = document.createElement('button');
                   postButtonInfo.classList.add('postButtonInfo');
-                   postButtonInfo.innerText = 'Comments';
+                  postButtonInfo.innerText = 'Comments';
 
-                   postWrapper.append(postPocket,postButtonInfo);
+                  postWrapper.append(postPocket,postButtonInfo);
+
+                  //При кліку на кнопку перехід на іншу сторінку з повною інфою про пост і всі коментарі.
+                  postButtonInfo.onclick = () => {
+                      localStorage.setItem('post', JSON.stringify(post));
+                      location.href = `../post-comments/post-comments.html?id=${post.id}`;
+                  }
                })
+
                document.body.appendChild(postWrapper);
            })
     }catch (e){
