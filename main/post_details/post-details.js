@@ -41,3 +41,41 @@ buttonInfo.onclick = () => {
 const hrLine = document.createElement('hr');
 document.body.appendChild(hrLine);
 
+//Створення кнопки,при натисканні на яку будудть відмальовуватись пости поточного юзера.
+const postButton = document.createElement('button');
+postButton.innerText = "Get user's Posts";
+postButton.classList.add('postButton');
+
+document.body.appendChild(postButton);
+
+//При кліку отримуємо данні з ендпоінту і відмальовуєм.
+
+const getPosts = async() => {
+    try{
+       await fetch(`https://jsonplaceholder.typicode.com/users/${postId}/posts`)
+           .then(response => response.json())
+           .then(posts => {
+               const postWrapper = document.createElement('div');
+               postWrapper.classList.add('postWrapper');
+
+               posts.forEach(post => {
+                   const postPocket = document.createElement('div');
+                   postPocket.innerText = `${post.title.split(' ')[0].slice(0,1).toUpperCase() + post.title.split(' ')[0].slice(1) + ' ' + post.title.split(' ')[1]}.`;
+
+                  const postButtonInfo = document.createElement('button');
+                  postButtonInfo.classList.add('postButtonInfo');
+                   postButtonInfo.innerText = 'Comments';
+
+                   postWrapper.append(postPocket,postButtonInfo);
+               })
+               document.body.appendChild(postWrapper);
+           })
+    }catch (e){
+        console.log(e);
+    }
+}
+
+postButton.onclick = () => {
+    postButton.setAttribute('disabled','disabled');
+    getPosts()
+}

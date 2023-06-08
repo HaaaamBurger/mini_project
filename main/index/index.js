@@ -35,8 +35,6 @@ const buildUsers = async () => {
                     document.body.appendChild(wrapper);
 
                 })
-                const hrLine = document.createElement('hr');
-                document.body.appendChild(hrLine);
             });
     }catch (e) {
         console.error(e);

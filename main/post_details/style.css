@@ -4,6 +4,9 @@ hr {
 .listData {
     margin: 0;
 }
+.userInfo {
+    min-width: 300px;
+}
 .userInfo p:first-child{
     margin-top: 0;
 }
@@ -15,6 +18,7 @@ body {
     background-color: #0f1221;
     color: white;
     font-size: 20px;
+    text-align: center;
 }
 
 .decorationalDiv{
@@ -52,4 +56,39 @@ body {
     background-color: #c7c7c7;
     border-radius: 12px;
     color: white;
+}
+.postButton {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    width: 90%;
+    height: 35px;
+    transition: 0.3s;
+    margin: 40px 0 40px 0;
+}
+.postButton:hover {
+    background-color: #c7c7c7;
+    color: white;
+    transition: 0.3s;
+}
+.postWrapper {
+    align-items: center;
+
+    height: 300px;
+    column-count: 5;
+}
+.postButtonInfo {
+    height: 30px;
+    margin:  8px 0 8px 0;
+    font-size: 16px;
+    border-radius: 7px;
+    border: none;
+    width: 100px;
+    transition: 0.3s;
+}
+.postButtonInfo:hover {
+    width: 120px;
+    background-color: #c7c7c7;
+    color: white;
+    transition: 0.3s;
 }
