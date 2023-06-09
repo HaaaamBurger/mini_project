@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="320c7d34-f68c-48c1-9948-066e32c76a88" name="Changes" comment="#" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2QqpfkKAXe8SfvQyaHYs2IP2RcR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Programming\react_test\mini_project\main\index" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="mini_project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="mini_project" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="320c7d34-f68c-48c1-9948-066e32c76a88" name="Changes" comment="" />
+      <created>1686071121666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686071121666</updated>
+      <workItem from="1686071122694" duration="1709000" />
+      <workItem from="1686091074419" duration="20000" />
+      <workItem from="1686091096993" duration="83000" />
+      <workItem from="1686091182782" duration="249000" />
+      <workItem from="1686091436989" duration="25000" />
+      <workItem from="1686091463727" duration="1993000" />
+      <workItem from="1686093482295" duration="177000" />
+      <workItem from="1686136857449" duration="9000" />
+      <workItem from="1686136869285" duration="773000" />
+      <workItem from="1686137652080" duration="509000" />
+      <workItem from="1686138168625" duration="59000" />
+      <workItem from="1686138230094" duration="699000" />
+      <workItem from="1686138937890" duration="134000" />
+      <workItem from="1686139074917" duration="260000" />
+      <workItem from="1686139339759" duration="528000" />
+      <workItem from="1686139874994" duration="742000" />
+      <workItem from="1686140626927" duration="622000" />
+      <workItem from="1686148152123" duration="823000" />
+      <workItem from="1686148986862" duration="716000" />
+      <workItem from="1686149713351" duration="1446000" />
+      <workItem from="1686155218732" duration="1575000" />
+      <workItem from="1686221340485" duration="18000" />
+      <workItem from="1686221361237" duration="4000" />
+      <workItem from="1686221761588" duration="17000" />
+      <workItem from="1686221843268" duration="12000" />
+      <workItem from="1686231730147" duration="703000" />
+      <workItem from="1686232442506" duration="15000" />
+      <workItem from="1686232459224" duration="23000" />
+      <workItem from="1686232484141" duration="27000" />
+      <workItem from="1686232513175" duration="632000" />
+      <workItem from="1686233154278" duration="194000" />
+      <workItem from="1686233351858" duration="556000" />
+      <workItem from="1686233915917" duration="65000" />
+      <workItem from="1686233982765" duration="726000" />
+      <workItem from="1686234718832" duration="16000" />
+      <workItem from="1686246562448" duration="825000" />
+      <workItem from="1686247397994" duration="1472000" />
+      <workItem from="1686248887385" duration="510000" />
+      <workItem from="1686249411484" duration="95000" />
+      <workItem from="1686311378902" duration="3000" />
+      <workItem from="1686338685217" duration="918000" />
+      <workItem from="1686353031778" duration="1495000" />
+    </task>
+    <task id="LOCAL-00001" summary="#">
+      <created>1686093645660</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686093645660</updated>
+    </task>
+    <task id="LOCAL-00002" summary="#">
+      <created>1686148284516</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686148284516</updated>
+    </task>
+    <task id="LOCAL-00003" summary="#">
+      <created>1686148317627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686148317627</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#">
+      <created>1686155236132</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686155236132</updated>
+    </task>
+    <task id="LOCAL-00005" summary="#">
+      <created>1686156217205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686156217205</updated>
+    </task>
+    <task id="LOCAL-00006" summary="#">
+      <created>1686156750324</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686156750324</updated>
+    </task>
+    <task id="LOCAL-00007" summary="#">
+      <created>1686234724826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686234724826</updated>
+    </task>
+    <task id="LOCAL-00008" summary="#">
+      <created>1686249501842</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686249501842</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="#" />
+    <option name="LAST_COMMIT_MESSAGE" value="#" />
+  </component>
+</project>
