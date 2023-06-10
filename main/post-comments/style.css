@@ -46,7 +46,7 @@ hr {
 }
 .commentsInfo {
     width: 100%;
-    text-align: left;
+    text-align: center;
 }
 .commentWrapper{
     padding: 15px;
@@ -64,6 +64,7 @@ hr {
 }
 .commentsInfo div:last-child {
     border-left: none;
+    margin-left: 3px;
 }
 .commentsInfo div:nth-child(4){
     border-right: none;

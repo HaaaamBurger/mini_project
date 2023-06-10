@@ -24,7 +24,7 @@ const hrLine = document.createElement('hr');
 document.body.appendChild(hrLine);
 
 const infoH2 = document.createElement('h2');
-infoH2.innerText = 'Comments:';
+infoH2.innerText = 'Comments';
 const infoBlock = document.createElement('div')
 infoBlock.classList.add('infoBlock');
 infoBlock.appendChild(infoH2);
@@ -50,7 +50,7 @@ const getComments = async () => {
                 })
             })
     }catch (e) {
-        console.log(e);
+       console.log(e);
     }
 }
 getComments();

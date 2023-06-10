@@ -16,7 +16,7 @@ const buildUsers = async () => {
                     infoBlock.classList.add('infoBlock');
 
                     const paragraph = document.createElement('p');
-                    paragraph.innerText = `${user.id}) ${user.name}`;
+                    paragraph.innerText = `№${user.id}: ${user.name}`;
 
                     const infoButton = document.createElement('button');
                     infoButton.classList.add('infoButton');
@@ -37,7 +37,20 @@ const buildUsers = async () => {
                 })
             });
     }catch (e) {
-        console.error(e);
+        //Відмальовака помилки
+        wrapper.innerHTML = '';
+
+        const errorAlert = document.createElement('h2');
+        errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
+        errorAlert.innerText = 'Something went wrong!';
+
+        const errorMessage = document.createElement('p');
+        errorMessage.innerText = `${e}`;
+
+        wrapper.classList.remove('main_wrapper');
+        wrapper.style.marginTop = '200px';
+
+        wrapper.append(errorAlert,errorMessage);
     }
 }
 buildUsers();

@@ -80,7 +80,19 @@ const getPosts = async() => {
                document.body.appendChild(postWrapper);
            })
     }catch (e){
-        console.log(e);
+        // wrapper.innerHTML = '';
+        //
+        // const errorAlert = document.createElement('h2');
+        // errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
+        // errorAlert.innerText = 'Something went wrong!';
+        //
+        // const errorMessage = document.createElement('p');
+        // errorMessage.innerText = `${e}`;
+        //
+        // wrapper.classList.remove('main_wrapper');
+        // wrapper.style.marginTop = '200px';
+        //
+        // wrapper.append(errorAlert,errorMessage);
     }
 }
 
