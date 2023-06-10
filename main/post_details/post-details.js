@@ -79,6 +79,7 @@ const getPosts = async() => {
 
                document.body.appendChild(postWrapper);
            })
+           //Відмальування ерори.
     }catch (e){
         // wrapper.innerHTML = '';
         //
@@ -95,7 +96,7 @@ const getPosts = async() => {
         // wrapper.append(errorAlert,errorMessage);
     }
 }
-
+//Виключення кнопки для того щоб запобігти повторного натискання.
 postButton.onclick = () => {
     postButton.setAttribute('disabled','disabled');
     getPosts()
