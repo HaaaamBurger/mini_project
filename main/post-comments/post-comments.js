@@ -23,3 +23,36 @@ document.body.appendChild(mainPostInfo);
 const hrLine = document.createElement('hr');
 document.body.appendChild(hrLine);
 
+const infoH2 = document.createElement('h2');
+infoH2.innerText = 'Comments:';
+const infoBlock = document.createElement('div')
+infoBlock.classList.add('infoBlock');
+infoBlock.appendChild(infoH2);
+document.body.appendChild(infoBlock)
+
+const commentsInfo = document.createElement('div');
+commentsInfo.classList.add('commentsInfo');
+
+const getComments = async () => {
+    try{
+        await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
+            .then(response => response.json())
+            .then(post => {
+                post.forEach(post => {
+                    const commentWrapper = document.createElement('div');
+                    commentWrapper.classList.add('commentWrapper');
+                    for (let item in post) {
+                        const p = document.createElement('p');
+                        p.innerText = `${item} - ${post[item]}`;
+                        commentWrapper.appendChild(p);
+                        commentsInfo.appendChild(commentWrapper);
+                    }
+                })
+            })
+    }catch (e) {
+        console.log(e);
+    }
+}
+getComments();
+
+document.body.appendChild(commentsInfo);
