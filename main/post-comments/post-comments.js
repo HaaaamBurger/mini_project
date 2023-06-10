@@ -19,7 +19,7 @@ const mainPostInfo = document.getElementsByClassName('mainPostInfo')[0];
 for (let item in postInfo) {
     if (item !== 'userId') {
         const p = document.createElement('p');
-        p.innerText = `${item}: ${postInfo[item]}`;
+        p.innerHTML = `${item.slice(0,1).toUpperCase().fontcolor('#9672FF') + item.slice(1).fontcolor('#9672FF')}  :  ${postInfo[item]}`;
         mainPostInfo.appendChild(p);
     }
 }
@@ -50,7 +50,7 @@ const getComments = async () => {
                     commentWrapper.classList.add('commentWrapper');
                     for (let item in post) {
                         const p = document.createElement('p');
-                        p.innerText = `${item} - ${post[item]}`;
+                        p.innerHTML = `${item.slice(0,1).toUpperCase().fontcolor('#9672FF') + item.slice(1).fontcolor('#9672FF')}  :  ${post[item]}`;
                         commentWrapper.appendChild(p);
                         commentsInfo.appendChild(commentWrapper);
                     }

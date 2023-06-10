@@ -8,22 +8,22 @@ const usersData = JSON.parse(localStorage.getItem('users'));
 const userData = usersData.find(user => user.id === postId);
 
 //Створимо рекурсивну функцію, щоб відмалювати всю інформацію про юзера.
-
 const userExlorer = (user) => {
-    const listData = document.getElementsByClassName('listData')[0];
+    const userInfo = document.getElementsByClassName('userInfo')[0];
 
     for (let field in user) {
         const p = document.createElement('p');
-        p.innerText = `${field.slice(0,1).toUpperCase() + field.slice(1)}  :  ${user[field]}`;
-        listData.appendChild(p);
+        p.innerHTML = `${field.slice(0,1).toUpperCase().fontcolor('#9672FF') + field.slice(1)}  :  ${user[field]}`;
+
+        userInfo.appendChild(p);
 
         if (typeof user[field] === 'object') {
             const div = document.createElement('div');
             div.classList.add('decorationalDiv');
-            p.innerText = `${field.slice(0,1).toUpperCase() + field.slice(1)}: ⤵`;
+            p.innerHTML = `${field.slice(0,1).toUpperCase().fontcolor('#9672FF') + field.slice(1).fontcolor('#9672FF')}: ⤵`;
             p.style.marginTop = '5px';
             div.appendChild(p);
-            listData.appendChild(div);
+            userInfo.appendChild(div);
 
             userExlorer(user[field]);
         }
@@ -43,15 +43,19 @@ const hrLine = document.createElement('hr');
 document.body.appendChild(hrLine);
 
 //Створення кнопки,при натисканні на яку будудть відмальовуватись пости поточного юзера.
+const buttonKeeper = document.createElement('div');
+buttonKeeper.classList.add('buttonKeeper');
+
 const postButton = document.createElement('button');
 postButton.innerText = "Get user's Posts";
 postButton.classList.add('postButton');
+buttonKeeper.appendChild(postButton)
+
 const hrLine_2 = document.createElement('hr');
 
-document.body.append(postButton, hrLine_2);
+document.body.append(buttonKeeper, hrLine_2);
 
 //При кліку отримуємо данні з ендпоінту і відмальовуєм.
-
 const getPosts = async() => {
     try{
        await fetch(`https://jsonplaceholder.typicode.com/users/${postId}/posts`)
@@ -61,8 +65,8 @@ const getPosts = async() => {
                postWrapper.classList.add('postWrapper');
 
                posts.forEach(post => {
-                   const postPocket = document.createElement('div');
-                   postPocket.innerText = `${post.title.split(' ')[0].slice(0,1).toUpperCase() + post.title.split(' ')[0].slice(1) + ' ' + post.title.split(' ')[1]}.`;
+                  const postPocket = document.createElement('div');
+                  postPocket.innerText = `${post.title.split(' ')[0].slice(0,1).toUpperCase() + post.title.split(' ')[0].slice(1) + ' ' + post.title.split(' ')[1]}.`;
 
                   const postButtonInfo = document.createElement('button');
                   postButtonInfo.classList.add('postButtonInfo');
@@ -81,23 +85,26 @@ const getPosts = async() => {
            })
            //Відмальування ерори.
     }catch (e){
-        // wrapper.innerHTML = '';
-        //
-        // const errorAlert = document.createElement('h2');
-        // errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
-        // errorAlert.innerText = 'Something went wrong!';
-        //
-        // const errorMessage = document.createElement('p');
-        // errorMessage.innerText = `${e}`;
-        //
-        // wrapper.classList.remove('main_wrapper');
-        // wrapper.style.marginTop = '200px';
-        //
-        // wrapper.append(errorAlert,errorMessage);
+        buttonKeeper.innerHTML = '';
+
+        const errorAlert = document.createElement('h2');
+        errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
+        errorAlert.innerText = 'Something went wrong!';
+
+        const errorMessage = document.createElement('p');
+        errorMessage.innerText = `${e}`;
+
+        buttonKeeper.classList.remove('main_wrapper');
+        buttonKeeper.style.cssText = 'margin: 100px 0 100px 0';
+
+        buttonKeeper.append(errorAlert,errorMessage);
+        console.log(e);
     }
 }
-//Виключення кнопки для того щоб запобігти повторного натискання.
+//Виключення кнопки для того щоб запобігти повторного натискання і виклик основної функції.
 postButton.onclick = () => {
     postButton.setAttribute('disabled','disabled');
-    getPosts()
+    postButton.classList.remove('postButton');
+    postButton.classList.add('newButtonStyle');
+    getPosts();
 }
