@@ -23,16 +23,29 @@ const buildUsers = async () => {
                     infoButton.innerText = 'Details';
 
                     infoButton.addEventListener('click', (e) => {
-                        const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+                        let currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 
                         const historyLog = JSON.parse(localStorage.getItem('historyLog')) || [];
+
                         if (!historyLog.length) {
-                            historyLog.push({userId: user.id, currentTime, lastTime: currentTime});
-                            localStorage.setItem('historyLog', JSON.stringify(historyLog));
-                        } else if (historyLog.length) {
-                            const newCurrentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-                            const visitedUser = historyLog.find(userObject => userObject.userId === user.id);
-                           
+                            const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: currentTime};
+                            historyLog.push(newHistoryLog);
+                            localStorage.setItem('historyLog',JSON.stringify(historyLog));
+                        } else if (historyLog.length){
+                            let logs = [];
+                            historyLog.forEach(log => log.userID === user.id ? logs.push(log) : null);
+                            console.log(logs);
+
+                            const previousLog = logs[logs.length - 1];
+                            if (previousLog) {
+                                const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: previousLog.sessionTime};
+                                historyLog.push(newHistoryLog);
+                                localStorage.setItem('historyLog',JSON.stringify(historyLog));
+                            } else {
+                                const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: currentTime};
+                                historyLog.push(newHistoryLog);
+                                localStorage.setItem('historyLog',JSON.stringify(historyLog));
+                            }
                         }
 
                         location.href = `../post_details/post-details.html?id=${user.id}`;
@@ -47,7 +60,7 @@ const buildUsers = async () => {
                     document.body.appendChild(wrapper);
                 })
             });
-    }catch (e) {
+    } catch (e) {
         // Відмальовака помилки
         wrapper.innerHTML = '';
 
@@ -61,7 +74,7 @@ const buildUsers = async () => {
         wrapper.classList.remove('main_wrapper');
         wrapper.style.marginTop = '200px';
 
-        wrapper.append(errorAlert,errorMessage);
+        wrapper.append(errorAlert, errorMessage);
         console.log(e)
     }
 }
