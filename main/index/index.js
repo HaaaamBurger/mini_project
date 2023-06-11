@@ -23,6 +23,7 @@ const buildUsers = async () => {
                     infoButton.innerText = 'Details';
 
                     infoButton.addEventListener('click', (e) => {
+                        //Запис дати до LocalStorage, щоб в майбутьному відмалювати час відвідання сторінки.
                         let currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 
                         const historyLog = JSON.parse(localStorage.getItem('historyLog')) || [];
@@ -47,7 +48,7 @@ const buildUsers = async () => {
                                 localStorage.setItem('historyLog',JSON.stringify(historyLog));
                             }
                         }
-
+                        //Шлях до сторінки з детальною інфою.
                         location.href = `../post_details/post-details.html?id=${user.id}`;
                     })
                     const decorationDiv = document.createElement('div');

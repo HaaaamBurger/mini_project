@@ -114,7 +114,7 @@ body {
 }
 .decorationDiv {
     margin: 10px;
-    background-color: #9672FF;
+    background-color: white;
     height: 3px;
     width: 80px;
     border: none;
@@ -130,7 +130,7 @@ body {
 }
 .decoratePostDiv{
     margin: 0 10px 10px 10px;
-    background-color: #9672FF;
+    background-color: white;
     height: 3px;
     width: 30px;
     border: none;
