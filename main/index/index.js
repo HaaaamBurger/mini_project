@@ -22,9 +22,20 @@ const buildUsers = async () => {
                     infoButton.classList.add('infoButton');
                     infoButton.innerText = 'Details';
 
-                    infoButton.addEventListener('click', () => {
+                    infoButton.addEventListener('click', (e) => {
+                        const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+                        const historyLog = JSON.parse(localStorage.getItem('historyLog')) || [];
+                        if (!historyLog.length) {
+                            historyLog.push({userId: user.id, currentTime, lastTime: currentTime});
+                            localStorage.setItem('historyLog', JSON.stringify(historyLog));
+                        } else if (historyLog.length) {
+                            const newCurrentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+                            const visitedUser = historyLog.find(userObject => userObject.userId === user.id);
+                           
+                        }
+
                         location.href = `../post_details/post-details.html?id=${user.id}`;
-                        
                     })
                     const decorationDiv = document.createElement('div');
                     decorationDiv.classList.add('decorationDiv');
