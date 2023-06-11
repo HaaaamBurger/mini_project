@@ -24,6 +24,7 @@ const buildUsers = async () => {
 
                     infoButton.addEventListener('click', () => {
                         location.href = `../post_details/post-details.html?id=${user.id}`;
+                        
                     })
                     const decorationDiv = document.createElement('div');
                     decorationDiv.classList.add('decorationDiv');
