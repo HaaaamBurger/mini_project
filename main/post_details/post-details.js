@@ -13,14 +13,14 @@ const userExlorer = (user) => {
 
     for (let field in user) {
         const p = document.createElement('p');
-        p.innerHTML = `${field.slice(0,1).toUpperCase().fontcolor('#9672FF') + field.slice(1)}  :  ${user[field]}`;
+        p.innerHTML = `${field.slice(0,1).toUpperCase().fontcolor('#9672FF') + field.slice(1).fontcolor('#9672FF')}  :  ${user[field]}`;
 
         userInfo.appendChild(p);
 
         if (typeof user[field] === 'object') {
             const div = document.createElement('div');
             div.classList.add('decorationalDiv');
-            p.innerHTML = `${field.slice(0,1).toUpperCase().fontcolor('#9672FF') + field.slice(1).fontcolor('#9672FF')}: ⤵`;
+            p.innerHTML = `${field.slice(0,1).toUpperCase() + field.slice(1)}: ⤵`;
             p.style.marginTop = '5px';
             div.appendChild(p);
             userInfo.appendChild(div);
@@ -46,10 +46,13 @@ document.body.appendChild(hrLine);
 const buttonKeeper = document.createElement('div');
 buttonKeeper.classList.add('buttonKeeper');
 
+const decorationDiv = document.createElement('div');
+decorationDiv.classList.add('decorationDiv');
+
 const postButton = document.createElement('button');
 postButton.innerText = "Get user's Posts";
 postButton.classList.add('postButton');
-buttonKeeper.appendChild(postButton)
+buttonKeeper.append(postButton,decorationDiv);
 
 const hrLine_2 = document.createElement('hr');
 
@@ -65,14 +68,22 @@ const getPosts = async() => {
                postWrapper.classList.add('postWrapper');
 
                posts.forEach(post => {
+                  const decoratePostDiv = document.createElement('div');
+                   decoratePostDiv.classList.add('decoratePostDiv');
+
+                  const postKeeper = document.createElement('div');
+                  postKeeper.classList.add('postKeeper');
+
                   const postPocket = document.createElement('div');
-                  postPocket.innerText = `${post.title.split(' ')[0].slice(0,1).toUpperCase() + post.title.split(' ')[0].slice(1) + ' ' + post.title.split(' ')[1]}.`;
+                  postPocket.innerHTML = `${post.title.split(' ')[0].slice(0,1).toUpperCase().fontcolor('#9672FF') + post.title.split(' ')[0].slice(1) + ' ' + post.title.split(' ')[1]}.`;
 
                   const postButtonInfo = document.createElement('button');
                   postButtonInfo.classList.add('postButtonInfo');
                   postButtonInfo.innerText = 'Comments';
 
-                  postWrapper.append(postPocket,postButtonInfo);
+                   postKeeper.append(postPocket,postButtonInfo,decoratePostDiv)
+
+                  postWrapper.appendChild(postKeeper);
 
                   //При кліку на кнопку перехід на іншу сторінку з повною інфою про пост і всі коментарі.
                   postButtonInfo.onclick = () => {

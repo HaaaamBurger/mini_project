@@ -25,10 +25,10 @@ const buildUsers = async () => {
                     infoButton.addEventListener('click', () => {
                         location.href = `../post_details/post-details.html?id=${user.id}`;
                     })
-                    const decorationalDiv = document.createElement('div');
-                    decorationalDiv.classList.add('decorationInfo');
+                    const decorationDiv = document.createElement('div');
+                    decorationDiv.classList.add('decorationDiv');
 
-                    infoBlock.append(paragraph, infoButton, decorationalDiv);
+                    infoBlock.append(paragraph, infoButton, decorationDiv);
 
                     wrapper.appendChild(infoBlock)
 
@@ -36,7 +36,7 @@ const buildUsers = async () => {
                 })
             });
     }catch (e) {
-        Відмальовака помилки
+        // Відмальовака помилки
         wrapper.innerHTML = '';
 
         const errorAlert = document.createElement('h2');

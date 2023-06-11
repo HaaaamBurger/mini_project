@@ -65,7 +65,7 @@ body {
     width: 90%;
     height: 35px;
     transition: 0.3s;
-    margin: 40px 0 40px 0;
+    margin: 40px 0 0 0;
 }
 .postButton:hover {
     background-color: #c7c7c7;
@@ -101,4 +101,36 @@ body {
     transition: 0.3s;
     margin: 40px 0 40px 0;
     color: #3e3d3d;
+}
+.decorationDiv {
+    margin: 10px;
+    background-color: #9672FF;
+    height: 3px;
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+.buttonKeeper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.decoratePostDiv{
+    margin: 0 10px 10px 10px;
+    background-color: #9672FF;
+    height: 3px;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+
+}
+.postKeeper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -32,9 +32,9 @@ body{
     color: white;
     width: 170px;
 }
-.decorationInfo {
+.decorationDiv {
     margin: 10px;
-    background-color: white;
+    background-color: #9672FF;
     height: 3px;
     width: 30px;
     border: none;

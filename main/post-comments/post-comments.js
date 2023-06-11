@@ -6,7 +6,7 @@ const postInfo = JSON.parse(localStorage.getItem('post'));
 
 //Відмальування UserId
 const userId = document.getElementsByClassName('userId')[0];
-userId.innerText = `UserID: ${postInfo.userId}`;
+userId.innerHTML = `UserID: ${postInfo.userId.toString().fontcolor('#9672FF')}`;
 
 //Кнопка повернення назад.
 const postButton = document.getElementsByClassName('postButton')[0];
