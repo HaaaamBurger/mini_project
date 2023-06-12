@@ -26,26 +26,26 @@ const buildUsers = async () => {
                         //Запис дати до LocalStorage, щоб в майбутьному відмалювати час відвідання сторінки.
                         let currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 
-                        const historyLog = JSON.parse(localStorage.getItem('historyLog')) || [];
+                        const historyLogUsers = JSON.parse(localStorage.getItem('historyLogUsers')) || [];
 
-                        if (!historyLog.length) {
+                        if (!historyLogUsers.length) {
                             const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: 'Never'};
-                            historyLog.push(newHistoryLog);
-                            localStorage.setItem('historyLog',JSON.stringify(historyLog));
-                        } else if (historyLog.length){
+                            historyLogUsers.push(newHistoryLog);
+                            localStorage.setItem('historyLogUsers',JSON.stringify(historyLogUsers));
+                        } else if (historyLogUsers.length){
                             let logs = [];
-                            historyLog.forEach(log => log.userID === user.id ? logs.push(log) : null);
+                            historyLogUsers.forEach(log => log.userID === user.id ? logs.push(log) : null);
                             console.log(logs);
 
                             const previousLog = logs[logs.length - 1];
                             if (previousLog) {
                                 const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: previousLog.sessionTime};
-                                historyLog.push(newHistoryLog);
-                                localStorage.setItem('historyLog',JSON.stringify(historyLog));
+                                historyLogUsers.push(newHistoryLog);
+                                localStorage.setItem('historyLogUsers',JSON.stringify(historyLogUsers));
                             } else {
                                 const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: 'Never'};
-                                historyLog.push(newHistoryLog);
-                                localStorage.setItem('historyLog',JSON.stringify(historyLog));
+                                historyLogUsers.push(newHistoryLog);
+                                localStorage.setItem('historyLogUsers',JSON.stringify(historyLogUsers));
                             }
                         }
                         //Шлях до сторінки з детальною інфою.

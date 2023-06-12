@@ -88,6 +88,32 @@ const getPosts = async() => {
                   //При кліку на кнопку перехід на іншу сторінку з повною інфою про пост і всі коментарі.
                   postButtonInfo.onclick = () => {
                       localStorage.setItem('post', JSON.stringify(post));
+
+                      let currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+
+                      const historyLogPosts = JSON.parse(localStorage.getItem('historyLogPosts')) || [];
+
+                      if (!historyLogPosts.length) {
+                          const newHistoryLogPosts = {userID: post.id, sessionTime: currentTime, lastVisited: 'Never'};
+                          historyLogPosts.push(newHistoryLogPosts);
+                          localStorage.setItem('historyLogPosts',JSON.stringify(historyLogPosts));
+                      } else if (historyLogPosts.length){
+                          let logs = [];
+                          historyLogPosts.forEach(log => log.userID === post.id ? logs.push(log) : null);
+                          console.log(logs);
+
+                          const previousLog = logs[logs.length - 1];
+                          if (previousLog) {
+                              const newHistoryLogPosts = {userID: post.id, sessionTime: currentTime, lastVisited: previousLog.sessionTime};
+                              historyLogPosts.push(newHistoryLogPosts);
+                              localStorage.setItem('historyLogPosts',JSON.stringify(historyLogPosts));
+                          } else {
+                              const newHistoryLogPosts = {userID: post.id, sessionTime: currentTime, lastVisited: 'Never'};
+                              historyLogPosts.push(newHistoryLogPosts);
+                              localStorage.setItem('historyLogPosts',JSON.stringify(historyLogPosts));
+                          }
+                      }
+
                       location.href = `../post-comments/post-comments.html?id=${post.id}`;
                   }
                })
@@ -123,7 +149,7 @@ postButton.onclick = () => {
 //Відмальовка дати.
 const previousSession = document.querySelector('.sessionInfoBox > h3:nth-child(2)');
 const currentSession = document.querySelector('.sessionInfoBox > h3:last-child');
-const sessionActions = JSON.parse(localStorage.getItem('historyLog'));
+const sessionActions = JSON.parse(localStorage.getItem('historyLogUsers'));
 console.log(sessionActions);
 const userIdDate = [];
 sessionActions.forEach(date => date.userID === postId ? userIdDate.push(date) : null);
