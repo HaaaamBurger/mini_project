@@ -156,3 +156,9 @@ body {
 .sessionInfoBox h3:last-child {
     margin-top: 0;
 }
+.sessionInfoBox h2 {
+    margin-bottom: 0;
+}
+.sessionInfoBox h3 {
+    margin-left: 50px;
+}
