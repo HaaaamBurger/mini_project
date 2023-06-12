@@ -56,9 +56,7 @@ const buildUsers = async () => {
 
                     infoBlock.append(paragraph, infoButton, decorationDiv);
 
-                    wrapper.appendChild(infoBlock)
-
-                    document.body.appendChild(wrapper);
+                    wrapper.appendChild(infoBlock);
                 })
             });
     } catch (e) {
@@ -80,3 +78,22 @@ const buildUsers = async () => {
     }
 }
 buildUsers();
+
+
+const historyUsers = document.querySelector('.historyUsers > ul');
+const getInfoUsers = JSON.parse(localStorage.getItem('historyLogUsers')) || [];
+
+getInfoUsers.forEach(session => {
+    const li = document.createElement('li');
+    li.innerText = `User Id: ${session.userID} - Visited Time: ${session.sessionTime}`;
+    historyUsers.appendChild(li);
+})
+
+const historyPosts = document.querySelector('.historyPosts > ul');
+const getInfoPosts= JSON.parse(localStorage.getItem('historyLogPosts')) || [];
+
+getInfoPosts.forEach(session => {
+    const li = document.createElement('li');
+    li.innerText = `User Id: ${session.userID} - Visited Time: ${session.sessionTime}`;
+    historyPosts.appendChild(li);
+})
