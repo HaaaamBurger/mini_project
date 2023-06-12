@@ -15,6 +15,7 @@ postButton.onclick = () => {
 }
 
 //Відмальування основної інфи про пост.
+const mainPostInfoBox = document.getElementsByClassName('mainPostInfoBox')[0];
 const mainPostInfo = document.getElementsByClassName('mainPostInfo')[0];
 for (let item in postInfo) {
     if (item !== 'userId') {
@@ -23,7 +24,19 @@ for (let item in postInfo) {
         mainPostInfo.appendChild(p);
     }
 }
-document.body.appendChild(mainPostInfo);
+
+document.body.appendChild(mainPostInfoBox);
+
+//Відмальовка дати.
+
+const previousSession = document.querySelector('.sessionInfoBox > h3:nth-child(2)');
+const currentSession = document.querySelector('.sessionInfoBox > h3:last-child');
+const sessionActions = JSON.parse(localStorage.getItem('historyLogPosts'));
+console.log(sessionActions);
+const userIdDate = [];
+sessionActions.forEach(date => date.userID === postId ? userIdDate.push(date) : null);
+previousSession.innerHTML = previousSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].lastVisited;;
+currentSession.innerHTML = currentSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].sessionTime;
 
 const hrLine = document.createElement('hr');
 document.body.appendChild(hrLine);

@@ -33,6 +33,7 @@ body {
     justify-content: space-between;
 }
 .mainPostInfo {
+
     border-right: 3px solid white;
     width: 700px;
     box-sizing: border-box;
@@ -79,4 +80,20 @@ hr {
 }
 .userId {
     margin-left: 190px;
+}
+.sessionInfoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 15px;
+}
+.sessionInfoBox h3:first-child {
+    margin-bottom: 0;
+}
+.sessionInfoBox h3:last-child {
+    margin-top: 0;
+}
+.mainPostInfoBox{
+    display: flex;
 }
