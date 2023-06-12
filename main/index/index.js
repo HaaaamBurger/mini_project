@@ -29,7 +29,7 @@ const buildUsers = async () => {
                         const historyLog = JSON.parse(localStorage.getItem('historyLog')) || [];
 
                         if (!historyLog.length) {
-                            const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: currentTime};
+                            const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: 'Never'};
                             historyLog.push(newHistoryLog);
                             localStorage.setItem('historyLog',JSON.stringify(historyLog));
                         } else if (historyLog.length){
@@ -43,7 +43,7 @@ const buildUsers = async () => {
                                 historyLog.push(newHistoryLog);
                                 localStorage.setItem('historyLog',JSON.stringify(historyLog));
                             } else {
-                                const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: currentTime};
+                                const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: 'Never'};
                                 historyLog.push(newHistoryLog);
                                 localStorage.setItem('historyLog',JSON.stringify(historyLog));
                             }

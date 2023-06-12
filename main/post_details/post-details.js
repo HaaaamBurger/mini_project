@@ -121,11 +121,11 @@ postButton.onclick = () => {
 }
 
 //Відмальовка дати.
-const previousSession = document.querySelector('.sessionInfoBox > p:first-child');
-const currentSession = document.querySelector('.sessionInfoBox > p:last-child');
+const previousSession = document.querySelector('.sessionInfoBox > h3:nth-child(2)');
+const currentSession = document.querySelector('.sessionInfoBox > h3:last-child');
 const sessionActions = JSON.parse(localStorage.getItem('historyLog'));
 console.log(sessionActions);
 const userIdDate = [];
 sessionActions.forEach(date => date.userID === postId ? userIdDate.push(date) : null);
-previousSession.innerText = `Previous session: ${userIdDate[userIdDate.length - 1].lastVisited}`
-currentSession.innerText = `Current session: ${userIdDate[userIdDate.length - 1].sessionTime}`;
+previousSession.innerHTML = previousSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].lastVisited;;
+currentSession.innerHTML = currentSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].sessionTime;
