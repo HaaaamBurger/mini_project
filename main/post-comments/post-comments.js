@@ -11,7 +11,15 @@ userId.innerHTML = `UserID: ${postInfo.userId.toString().fontcolor('#9672FF')}`;
 //Кнопка повернення назад.
 const postButton = document.getElementsByClassName('postButton')[0];
 postButton.onclick = () => {
-    location.href = (`../post_details/post-details.html?id=${postInfo.userId}`);
+    //Флажок для поверення на початкову сторінку.
+    const linkSwitcher = JSON.parse(localStorage.getItem('linkSwitcher'));
+
+    if (linkSwitcher) {
+        location.href = '../index/index.html';
+        localStorage.removeItem('linkSwitcher');
+    } else {
+        location.href = (`../post_details/post-details.html?id=${postInfo.userId}`);
+    }
 }
 
 //Відмальування основної інфи про пост.

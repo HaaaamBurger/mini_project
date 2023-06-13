@@ -87,6 +87,7 @@ getInfoUsers.forEach(session => {
     li.innerHTML = `User Id: ${session.userID.toString().fontcolor('#9672FF')} - Visited Time: ${session.sessionTime.fontcolor('#9672FF')}`;
     li.classList.add('liLink');
     li.onclick = () => {
+        localStorage.setItem('linkSwitcher', JSON.stringify(1));
         location.href = `../post_details/post-details.html?id=${session.userID}`;
     }
 
@@ -101,6 +102,8 @@ getInfoPosts.forEach(session => {
     li.innerHTML = `Post Id: ${session.postID.toString().fontcolor('#9672FF')} - Visited Time: ${session.sessionTime.fontcolor('#9672FF')}`;
     li.classList.add('liLink');
     li.onclick = () => {
+        //Створення флажка для поверення з постів на початкову сторінку.
+        localStorage.setItem('linkSwitcher', JSON.stringify(1));
         location.href = `../post-comments/post-comments.html?id=${session.postID}`;
     }
 
