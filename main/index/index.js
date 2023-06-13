@@ -94,6 +94,6 @@ const getInfoPosts= JSON.parse(localStorage.getItem('historyLogPosts')) || [];
 
 getInfoPosts.forEach(session => {
     const li = document.createElement('li');
-    li.innerText = `User Id: ${session.userID} - Visited Time: ${session.sessionTime}`;
+    li.innerText = `Post Id: ${session.postID} - Visited Time: ${session.sessionTime}`;
     historyPosts.appendChild(li);
 })

@@ -34,7 +34,7 @@ const currentSession = document.querySelector('.sessionInfoBox > h3:last-child')
 const sessionActions = JSON.parse(localStorage.getItem('historyLogPosts'));
 console.log(sessionActions);
 const userIdDate = [];
-sessionActions.forEach(date => date.userID === postId ? userIdDate.push(date) : null);
+sessionActions.forEach(date => date.postID === postId ? userIdDate.push(date) : null);
 previousSession.innerHTML = previousSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].lastVisited;;
 currentSession.innerHTML = currentSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].sessionTime;
 

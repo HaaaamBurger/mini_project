@@ -87,6 +87,7 @@ const getPosts = async() => {
 
                   //При кліку на кнопку перехід на іншу сторінку з повною інфою про пост і всі коментарі.
                   postButtonInfo.onclick = () => {
+
                       localStorage.setItem('post', JSON.stringify(post));
 
                       let currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -94,7 +95,7 @@ const getPosts = async() => {
                       const historyLogPosts = JSON.parse(localStorage.getItem('historyLogPosts')) || [];
 
                       if (!historyLogPosts.length) {
-                          const newHistoryLogPosts = {userID: post.id, sessionTime: currentTime, lastVisited: 'Never'};
+                          const newHistoryLogPosts = {userID: post.userid,postID: post.id, sessionTime: currentTime, lastVisited: 'Never'};
                           historyLogPosts.push(newHistoryLogPosts);
                           localStorage.setItem('historyLogPosts',JSON.stringify(historyLogPosts));
                       } else if (historyLogPosts.length){
@@ -104,11 +105,11 @@ const getPosts = async() => {
 
                           const previousLog = logs[logs.length - 1];
                           if (previousLog) {
-                              const newHistoryLogPosts = {userID: post.id, sessionTime: currentTime, lastVisited: previousLog.sessionTime};
+                              const newHistoryLogPosts = {userID: post.userid,postID: post.id, sessionTime: currentTime, lastVisited: previousLog.sessionTime};
                               historyLogPosts.push(newHistoryLogPosts);
                               localStorage.setItem('historyLogPosts',JSON.stringify(historyLogPosts));
                           } else {
-                              const newHistoryLogPosts = {userID: post.id, sessionTime: currentTime, lastVisited: 'Never'};
+                              const newHistoryLogPosts = {userID: post.userid,postID: post.id, sessionTime: currentTime, lastVisited: 'Never'};
                               historyLogPosts.push(newHistoryLogPosts);
                               localStorage.setItem('historyLogPosts',JSON.stringify(historyLogPosts));
                           }
