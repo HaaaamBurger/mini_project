@@ -50,3 +50,11 @@ body{
 .historyUsers, .historyPosts {
     text-align: left;
 }
+.historyUsers li, .historyPosts li{
+    margin-bottom: 15px;
+}
+
+.liLink:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -79,13 +79,17 @@ const buildUsers = async () => {
 }
 buildUsers();
 
-
 const historyUsers = document.querySelector('.historyUsers > ul');
 const getInfoUsers = JSON.parse(localStorage.getItem('historyLogUsers')) || [];
 
 getInfoUsers.forEach(session => {
     const li = document.createElement('li');
-    li.innerText = `User Id: ${session.userID} - Visited Time: ${session.sessionTime}`;
+    li.innerHTML = `User Id: ${session.userID.toString().fontcolor('#9672FF')} - Visited Time: ${session.sessionTime.fontcolor('#9672FF')}`;
+    li.classList.add('liLink');
+    li.onclick = () => {
+        location.href = `../post_details/post-details.html?id=${session.userID}`;
+    }
+
     historyUsers.appendChild(li);
 })
 
@@ -94,6 +98,11 @@ const getInfoPosts= JSON.parse(localStorage.getItem('historyLogPosts')) || [];
 
 getInfoPosts.forEach(session => {
     const li = document.createElement('li');
-    li.innerText = `Post Id: ${session.postID} - Visited Time: ${session.sessionTime}`;
+    li.innerHTML = `Post Id: ${session.postID.toString().fontcolor('#9672FF')} - Visited Time: ${session.sessionTime.fontcolor('#9672FF')}`;
+    li.classList.add('liLink');
+    li.onclick = () => {
+        location.href = `../post-comments/post-comments.html?id=${session.postID}`;
+    }
+
     historyPosts.appendChild(li);
 })
