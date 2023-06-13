@@ -47,6 +47,7 @@ body{
     margin-top: 30px;
     padding: 10px 10px 0 10px;
 }
+
 .historyUsers, .historyPosts {
     text-align: left;
 }
@@ -57,4 +58,24 @@ body{
 .liLink:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+.buttonLogKeeper {
+    margin: 20px 0 50px 15%;
+    width: 100%;
+    text-align: left;
+}
+.clearHistoryLog {
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 150px;
+    transition: 0.3s;
+
+}
+.clearHistoryLog:hover {
+    transition: 0.3s;
+    background-color: #F14D4D;
+    border-radius: 12px;
+    color: white;
 }

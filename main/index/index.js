@@ -31,21 +31,25 @@ const buildUsers = async () => {
                         if (!historyLogUsers.length) {
                             const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: 'Never'};
                             historyLogUsers.push(newHistoryLog);
-                            localStorage.setItem('historyLogUsers',JSON.stringify(historyLogUsers));
-                        } else if (historyLogUsers.length){
+                            localStorage.setItem('historyLogUsers', JSON.stringify(historyLogUsers));
+                        } else if (historyLogUsers.length) {
                             let logs = [];
                             historyLogUsers.forEach(log => log.userID === user.id ? logs.push(log) : null);
                             console.log(logs);
 
                             const previousLog = logs[logs.length - 1];
                             if (previousLog) {
-                                const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: previousLog.sessionTime};
+                                const newHistoryLog = {
+                                    userID: user.id,
+                                    sessionTime: currentTime,
+                                    lastVisited: previousLog.sessionTime
+                                };
                                 historyLogUsers.push(newHistoryLog);
-                                localStorage.setItem('historyLogUsers',JSON.stringify(historyLogUsers));
+                                localStorage.setItem('historyLogUsers', JSON.stringify(historyLogUsers));
                             } else {
                                 const newHistoryLog = {userID: user.id, sessionTime: currentTime, lastVisited: 'Never'};
                                 historyLogUsers.push(newHistoryLog);
-                                localStorage.setItem('historyLogUsers',JSON.stringify(historyLogUsers));
+                                localStorage.setItem('historyLogUsers', JSON.stringify(historyLogUsers));
                             }
                         }
                         //Шлях до сторінки з детальною інфою.
@@ -95,7 +99,7 @@ getInfoUsers.forEach(session => {
 })
 
 const historyPosts = document.querySelector('.historyPosts > ul');
-const getInfoPosts= JSON.parse(localStorage.getItem('historyLogPosts')) || [];
+const getInfoPosts = JSON.parse(localStorage.getItem('historyLogPosts')) || [];
 
 getInfoPosts.forEach(session => {
     const li = document.createElement('li');
@@ -106,6 +110,16 @@ getInfoPosts.forEach(session => {
         localStorage.setItem('linkSwitcher', JSON.stringify(1));
         location.href = `../post-comments/post-comments.html?id=${session.postID}`;
     }
-
     historyPosts.appendChild(li);
 })
+
+const clearHistoryLog = document.getElementsByClassName('clearHistoryLog')[0];
+const buttonLogKeeper = document.getElementsByClassName('buttonLogKeeper')[0];
+
+
+clearHistoryLog.onclick = () => {
+    const userStorage = localStorage.getItem('historyLogUsers');
+
+    localStorage.clear();
+    location.reload();
+}
