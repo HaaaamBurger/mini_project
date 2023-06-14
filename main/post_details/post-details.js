@@ -50,6 +50,7 @@ const decorationDiv = document.createElement('div');
 decorationDiv.classList.add('decorationDiv');
 
 const postButton = document.createElement('button');
+postButton.style.fontFamily = "'Nova Cut', cursive"
 postButton.innerText = "Get user's Posts";
 postButton.classList.add('postButton');
 buttonKeeper.append(postButton,decorationDiv);
@@ -79,6 +80,7 @@ const getPosts = async() => {
 
                   const postButtonInfo = document.createElement('button');
                   postButtonInfo.classList.add('postButtonInfo');
+                  postButtonInfo.style.fontFamily = "'Nova Cut', cursive"
                   postButtonInfo.innerText = 'Comments';
 
                    postKeeper.append(postPocket,postButtonInfo,decoratePostDiv)

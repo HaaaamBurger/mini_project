@@ -7,7 +7,8 @@ const buildUsers = async () => {
         await fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(value => {
-                //Аби не робити лишній запит на сервер передамо данні в LocalStorage.
+                //Аби не робити лишній запит на сервер передамо данні в LocalStorage.value
+                console.log(value);
                 localStorage.setItem('users', JSON.stringify(value));
 
                 //Відмальовка юзерів.
@@ -20,6 +21,7 @@ const buildUsers = async () => {
 
                     const infoButton = document.createElement('button');
                     infoButton.classList.add('infoButton');
+                    infoButton.style.fontFamily = "'Nova Cut', cursive"
                     infoButton.innerText = 'Details';
 
                     infoButton.addEventListener('click', (e) => {
@@ -116,6 +118,7 @@ getInfoPosts.forEach(session => {
 //Створення кнопки видалення кнопки для очищення Local Storage.
 const clearHistoryLog = document.createElement('button');
 clearHistoryLog.classList.add('clearHistoryLog');
+clearHistoryLog.style.fontFamily = "'Nova Cut', cursive";
 clearHistoryLog.innerText = 'Clear History';
 
 const buttonLogKeeper = document.getElementsByClassName('buttonLogKeeper')[0];
