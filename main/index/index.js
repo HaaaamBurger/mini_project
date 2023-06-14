@@ -113,13 +113,24 @@ getInfoPosts.forEach(session => {
     historyPosts.appendChild(li);
 })
 
-const clearHistoryLog = document.getElementsByClassName('clearHistoryLog')[0];
+//Створення кнопки видалення кнопки для очищення Local Storage.
+const clearHistoryLog = document.createElement('button');
+clearHistoryLog.classList.add('clearHistoryLog');
+clearHistoryLog.innerText = 'Clear History';
+
 const buttonLogKeeper = document.getElementsByClassName('buttonLogKeeper')[0];
+const userStorage = JSON.parse(localStorage.getItem('historyLogUsers'));
 
+try {
+    if (userStorage.length) {
+        buttonLogKeeper.appendChild(clearHistoryLog);
+        clearHistoryLog.onclick = () => {
+            localStorage.clear();
+            location.reload();
+        }
+    } else {
+        buttonLogKeeper.innerHTML = '';
+    }
+}catch (e){
 
-clearHistoryLog.onclick = () => {
-    const userStorage = localStorage.getItem('historyLogUsers');
-
-    localStorage.clear();
-    location.reload();
 }
