@@ -77,7 +77,7 @@ const getComments = async () => {
                     }
                 })
             })
-        //Відмальування ерори.
+        //Відмалювання ерори.
     }catch (e) {
        console.log(e);
     }
