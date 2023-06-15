@@ -33,7 +33,7 @@ for (let item in postInfo) {
     }
 }
 
-document.body.appendChild(mainPostInfoBox);
+// document.body.appendChild(mainPostInfoBox);
 
 //Відмальовка дати.
 
@@ -46,20 +46,14 @@ sessionActions.forEach(date => date.postID === postId ? userIdDate.push(date) : 
 previousSession.innerHTML = previousSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].lastVisited;;
 currentSession.innerHTML = currentSession.innerText.fontcolor('#9672FF') + ' ' + userIdDate[userIdDate.length - 1].sessionTime;
 
-const hrLine = document.createElement('hr');
-document.body.appendChild(hrLine);
-
 //Проміжний блок з текстом 'Comments'.
 const infoH2 = document.createElement('h2');
 infoH2.innerText = 'Comments⤵';
-const infoBlock = document.createElement('div')
-infoBlock.classList.add('infoBlock');
+const infoBlock = document.getElementsByClassName('infoBlock')[0];
 infoBlock.appendChild(infoH2);
-document.body.appendChild(infoBlock)
 
 //Відмалювання коментарів поста.
-const commentsInfo = document.createElement('div');
-commentsInfo.classList.add('commentsInfo');
+const commentsInfo = document.getElementsByClassName('commentsInfo')[0];
 
 const getComments = async () => {
     try{
@@ -79,21 +73,19 @@ const getComments = async () => {
             })
         //Відмалювання ерори.
     }catch (e) {
-        // buttonKeeper.innerHTML = '';
-        //
-        // const errorAlert = document.createElement('h2');
-        // errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
-        // errorAlert.innerText = 'Something went wrong!';
-        //
-        // const errorMessage = document.createElement('p');
-        // errorMessage.innerText = `${e}`;
-        //
-        // buttonKeeper.classList.remove('main_wrapper');
-        // buttonKeeper.style.cssText = 'margin: 100px 0 100px 0';
-        //
-        // buttonKeeper.append(errorAlert,errorMessage);
+        commentsInfo.innerHTML = '';
+
+        const errorAlert = document.createElement('h2');
+        errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
+        errorAlert.innerText = 'Something went wrong!';
+
+        const errorMessage = document.createElement('p');
+        errorMessage.innerText = `${e}`;
+
+        commentsInfo.classList.remove('commentsInfo');
+        commentsInfo.style.cssText = 'margin: 100px 0 100px 0';
+
+        commentsInfo.append(errorAlert,errorMessage);
     }
 }
 getComments();
-
-document.body.appendChild(commentsInfo);

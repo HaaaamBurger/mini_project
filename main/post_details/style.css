@@ -83,6 +83,7 @@ body {
     background-color: #c7c7c7;
     color: white;
     transition: 0.3s;
+    cursor: pointer;
 }
 .postWrapper {
     margin-top: 50px;
@@ -99,6 +100,7 @@ body {
     transition: 0.3s;
 }
 .postButtonInfo:hover {
+    cursor: pointer;
     width: 120px;
     background-color: #c7c7c7;
     color: white;
@@ -162,4 +164,7 @@ body {
 }
 .sessionInfoBox h3 {
     margin-left: 50px;
+}
+.navInfo button:hover {
+    cursor: pointer;
 }

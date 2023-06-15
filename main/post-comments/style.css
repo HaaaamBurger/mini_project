@@ -12,6 +12,7 @@ body {
     justify-content: space-between;
     padding: 0 70px 0 70px;
     align-items: center;
+    border-bottom: 3px solid white;
 }
 .navPosts button {
     font-size: 16px;
@@ -47,7 +48,6 @@ hr {
     margin: 0;
 }
 .commentsInfo {
-    width: 100%;
     text-align: center;
 }
 .commentWrapper{
@@ -103,4 +103,7 @@ hr {
 }
 .sessionInfoBox h3 {
     margin-left: 50px;
+}
+.postButton:hover {
+    cursor: pointer;
 }
