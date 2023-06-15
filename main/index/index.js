@@ -77,10 +77,16 @@ const buildUsers = async () => {
         errorMessage.innerText = `${e}`;
 
         wrapper.classList.remove('main_wrapper');
-        wrapper.style.marginTop = '200px';
+        wrapper.style.margin = '200px 0 200px 0';
 
         wrapper.append(errorAlert, errorMessage);
         console.log(e)
+
+        const recentLogsWrap = document.getElementsByClassName('recentLogsWrap')[0];
+        const buttonLogKeeper = document.getElementsByClassName('buttonLogKeeper')[0];
+
+        recentLogsWrap.innerHTML = '';
+        buttonLogKeeper.innerHTML = '';
     }
 }
 buildUsers();

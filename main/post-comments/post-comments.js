@@ -57,7 +57,7 @@ infoBlock.classList.add('infoBlock');
 infoBlock.appendChild(infoH2);
 document.body.appendChild(infoBlock)
 
-//Відмальування коментарів поста.
+//Відмалювання коментарів поста.
 const commentsInfo = document.createElement('div');
 commentsInfo.classList.add('commentsInfo');
 
@@ -79,7 +79,19 @@ const getComments = async () => {
             })
         //Відмалювання ерори.
     }catch (e) {
-       console.log(e);
+        // buttonKeeper.innerHTML = '';
+        //
+        // const errorAlert = document.createElement('h2');
+        // errorAlert.style.cssText = 'color: crimson; font-size: 2.5em';
+        // errorAlert.innerText = 'Something went wrong!';
+        //
+        // const errorMessage = document.createElement('p');
+        // errorMessage.innerText = `${e}`;
+        //
+        // buttonKeeper.classList.remove('main_wrapper');
+        // buttonKeeper.style.cssText = 'margin: 100px 0 100px 0';
+        //
+        // buttonKeeper.append(errorAlert,errorMessage);
     }
 }
 getComments();
