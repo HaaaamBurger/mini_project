@@ -141,5 +141,5 @@ try {
         buttonLogKeeper.innerHTML = '';
     }
 }catch (e){
-
+    console.log(e);
 }

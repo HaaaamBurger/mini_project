@@ -33,7 +33,6 @@ for (let item in postInfo) {
     }
 }
 
-// document.body.appendChild(mainPostInfoBox);
 
 //Відмальовка дати.
 
@@ -89,3 +88,12 @@ const getComments = async () => {
     }
 }
 getComments();
+
+
+const linkSwitcher = JSON.parse(localStorage.getItem('linkSwitcher'));
+if (linkSwitcher) {
+    userId.innerHTML = '';
+    mainPostInfoBox.innerHTML = '';
+    const hr = document.getElementsByTagName('hr')[0];
+    hr.remove()
+}
